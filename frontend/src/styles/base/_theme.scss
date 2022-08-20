@@ -1,0 +1,7 @@
+@use "sass:color";
+
+body {
+  @extend .text--gray-6, .text--500, .text--normal !optional;
+  font-family: "Roboto", sans-serif;
+  background-color: color.adjust(color("gray-2"), $lightness: 5%);
+}

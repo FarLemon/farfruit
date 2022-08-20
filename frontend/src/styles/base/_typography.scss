@@ -1,0 +1,67 @@
+@use 'sass:math';
+
+
+$text-size-list: xxs xs sm md lg xl xxl xxxl;
+
+$text-base-size: 1.25rem;
+$text-scale-ratio: 1.25;
+
+
+
+@function fontSize($size) {
+  $mdIndex: if(index($text-size-list, md), index($text-size-list, md), math.floor(length($text-size-list) / 2));
+  $sizeIndex: if(index($text-size-list, $size), index($text-size-list, $size), $mdIndex);
+
+  $numerator: $text-base-size;
+  $denominator: 1;
+
+  @if $sizeIndex < $mdIndex {
+    @for $i from 1 through $mdIndex - $sizeIndex {
+      $denominator: if($denominator == 1, $text-scale-ratio, calc($denominator * $text-scale-ratio));
+    }
+  } @else if $sizeIndex > $mdIndex {
+    @for $i from $mdIndex + 1 through $sizeIndex {
+      $numerator: calc($numerator * $text-scale-ratio);
+    }
+  }
+
+  @return calc($numerator / $denominator)
+};
+
+
+
+
+.text {
+  /* text size */
+  @each $size in $text-size-list {
+    &--#{$size} {
+      font-size: fontSize($size);
+    }
+  }
+
+  /* Text Colors */
+  @each $name, $value in $colors-list {
+    &--#{$name} {
+      color: $value;
+    }
+  }
+
+  /* text weight */
+  @for $i from 1 through 9 {
+    &--#{$i + '00'} { font-weight: 100 * $i; }
+  }
+
+  /* Text Style */
+  &--normal {font-style: normal;}
+  &--italic {font-style: italic;}
+  &--oblique {font-style: oblique;}
+}
+
+
+
+/* Set Default Text Sizes */
+h1 {font-size: fontSize(xxl);}
+h2 {font-size: fontSize(xl);}
+h3 {font-size: fontSize(lg);}
+h4 {font-size: fontSize(md);}
+small {font-size: fontSize(sm);}

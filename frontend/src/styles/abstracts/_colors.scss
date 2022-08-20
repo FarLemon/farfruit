@@ -1,0 +1,33 @@
+@use "sass:string";
+
+
+
+$colors-list: (
+  "gray-1": #ffffff,
+  "gray-2": #cdcfd2,
+  "gray-3": #9a9ea5,
+  "gray-4": #686e78,
+  "gray-5": #353d4b,
+  "gray-6": #030d1e,
+
+  "grape": #b05f91,
+  "baby-pink": #cd8ba7,
+  "raspberry": #cc7478,
+  "mandarin": #d2985d,
+  "lemon": #c6c35f,
+  "apple": #86a87f,
+  "mint": #93bca9,
+  "baby-blue": #9abfd5,
+  "violet": #9d98bd,
+  "blueberry": #7c88ae
+);
+
+
+
+@function color($name) {
+  @if not (map-get($colors-list, $name)) {
+    @warn "#{$name} is not a valid color.";
+    @return #000;
+  }
+  @return map-get($colors-list, $name);
+}
