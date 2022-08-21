@@ -6,6 +6,8 @@ import "@styles/_global.scss";
 import Error from "@pages/error";
 import Home from "@pages/home";
 
+import Footer from "@components/footer";
+
 
 
 const App: Component = () => {
@@ -20,9 +22,12 @@ const App: Component = () => {
 
         <Route path="/*all" component={Error}/>
       </Routes>
+
+      <Footer/>
     </>
   );
 };
+
 
 
 export default App;

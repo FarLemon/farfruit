@@ -1,0 +1,21 @@
+@import "@styles/abstracts/colors";
+
+.footer {
+  background-color: color("gray-6");
+  color: color("gray-3");
+  padding-block: 3rem;
+  display: flex;
+  justify-content: center;
+
+  &__content {
+    width: min(80%, 1000px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__icon {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+}

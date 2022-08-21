@@ -12,5 +12,3 @@ render(() => (
   ),
   document.getElementById("root") as HTMLElement
 );
-
-console.log(import.meta.env);
