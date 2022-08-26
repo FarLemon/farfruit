@@ -7,3 +7,11 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: color.adjust(color("gray-2"), $lightness: 5%);
 }
+
+
+
+@each $name, $value in $colors-list {
+  .background--#{$name} {
+    background-color: $value;
+  }
+}

@@ -7,6 +7,7 @@ import Error from "@pages/error";
 import Home from "@pages/home";
 
 import Footer from "@components/footer";
+import Nav from "@components/nav";
 
 
 
@@ -14,6 +15,8 @@ const App: Component = () => {
 
   return (
     <>
+      <Nav />
+
       <Routes>
         <Route path="/">
           <Route path="/" component={Home}/>
