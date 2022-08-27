@@ -1,10 +1,8 @@
 @import "@styles/abstracts/colors";
 
 .footer {
-  background-color: color("gray-6");
-  color: color("gray-3");
   padding-block: 2rem;
-  padding-inline: max(calc(50vw - 500px), 10vw);
+  padding-inline: max(calc(50vw - 750px), 10vw);
   display: flex;
   align-items: center;
   justify-content: space-between;
