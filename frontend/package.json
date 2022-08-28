@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "dev": "vite --mode staging",
+    "dev": "vite --mode staging --host",
     "build": "vite build",
     "build:staging": "vite build --mode staging",
     "serve": "vite preview"
