@@ -1,14 +1,15 @@
 import { Component } from "solid-js";
 
-import "@styles/pages/_error.scss";
-
 
 
 const Error: Component = () => {
 
   return (
     <>
-      <h1>404 Page not Found!</h1>
+      <div style={{"margin": "auto"}}>
+        <h1 style={{"margin-bottom": "0.5rem"}}>404: Page Not Found!</h1>
+        <p class="text--xs" style={{"text-align": "center"}}>It seems that the page you are looking for doesn't exist</p>
+      </div>
     </>
   );
 };

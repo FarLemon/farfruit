@@ -18,15 +18,11 @@ const App: Component = () => {
       <Nav />
 
       <Routes>
-        <Route path="/">
-          <Route path="/" component={Home}/>
-          <Route path="/home" component={Home}/>
-        </Route>
-
+        <Route path="/" component={Home}/>
         <Route path="/*all" component={Error}/>
       </Routes>
 
-      <Footer/>
+      <Footer />
     </>
   );
 };

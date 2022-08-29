@@ -2,16 +2,39 @@
 
 
 
-body {
-  @extend .text--gray-6, .text--500, .text--normal !optional;
-  font-family: "Roboto", sans-serif;
-  background-color: color.adjust(color("gray-2"), $lightness: 5%);
-}
-
-
-
 @each $name, $value in $colors-list {
   .background--#{$name} {
     background-color: $value;
   }
+
+  .fill--#{$name} {
+    fill: $value;
+  }
+}
+
+.background--light {
+  background-color: color.adjust(color("gray-2"), $lightness: 5%);
+}
+
+.fill--light {
+  fill: color.adjust(color("gray-2"), $lightness: 5%);
+}
+
+
+
+body {
+  @extend .text--gray-6, .text--500, .text--normal, .background--light !optional;
+  font-family: "Roboto", sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+:focus-visible {
+  border-radius: 0.5rem;
+  outline: solid 2px color("gray-6");
 }
